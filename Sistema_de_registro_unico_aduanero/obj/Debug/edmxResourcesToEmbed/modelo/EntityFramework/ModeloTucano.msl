@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SampleEntityFrameworkModelStoreContainer" CdmEntityContainer="SampleEntityFramework">
+    <EntitySetMapping Name="computador">
+      <EntityTypeMapping TypeName="SampleEntityFrameworkModel.computador">
+        <MappingFragment StoreEntitySet="computador">
+          <ScalarProperty Name="GUIDComputador" ColumnName="GUIDComputador" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Sistema_Operativo" ColumnName="Sistema_Operativo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Cantidad_perifericos" ColumnName="Cantidad_perifericos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

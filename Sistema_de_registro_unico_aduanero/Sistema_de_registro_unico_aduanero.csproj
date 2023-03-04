@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61E42835-BA2A-4288-8F17-C538621A447B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Sistema_de_registro_unico_aduanero</RootNamespace>
+    <AssemblyName>Sistema_de_registro_unico_aduanero</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net40\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net40\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net40\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="modelo\EntityFramework\computador.cs">
+      <DependentUpon>ModeloTucano.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\EntityFramework\ModeloTucano.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloTucano.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\EntityFramework\ModeloTucano.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloTucano.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\EntityFramework\ModeloTucano.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloTucano.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="controlador\DBTucanoQuerys.cs" />
+    <Compile Include="modelo\EntityFramework\TutorialYoutubeEntityFramework.cs" />
+    <Compile Include="modelo\EquipoComputo.cs" />
+    <Compile Include="modelo\Usuario.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="tucanoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tucanoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosPrograma.cs" />
+    <Compile Include="vista\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\EditarPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\EditarPC.Designer.cs">
+      <DependentUpon>EditarPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\FAQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\FAQ.Designer.cs">
+      <DependentUpon>FAQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\Informes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\Informes.Designer.cs">
+      <DependentUpon>Informes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\Informes2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\Informes2.Designer.cs">
+      <DependentUpon>Informes2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\IniciarSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\IniciarSesion.Designer.cs">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vista\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\AgregarPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\AgregarPC.Designer.cs">
+      <DependentUpon>AgregarPC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\EditarPC.resx">
+      <DependentUpon>EditarPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\FAQ.resx">
+      <DependentUpon>FAQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\Informes.resx">
+      <DependentUpon>Informes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\Informes2.resx">
+      <DependentUpon>Informes2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\IniciarSesion.resx">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\AgregarPC.resx">
+      <DependentUpon>AgregarPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="modelo\EntityFramework\ModeloTucano.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloTucano.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="modelo\EntityFramework\ModeloTucano.edmx.diagram">
+      <DependentUpon>ModeloTucano.edmx</DependentUpon>
+    </None>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tucanoDataSet.xsc">
+      <DependentUpon>tucanoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tucanoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tucanoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tucanoDataSet.xss">
+      <DependentUpon>tucanoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="vista\recursos\baseline_account_circle_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\baseline_cancel_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\baseline_done_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\baseline_help_outline_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\baseline_info_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\baseline_login_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\baseline_logout_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\baseline_save_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\baseline_settings_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\baseline_view_list_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\home_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\aduana-1200x798.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\fondo_transparente_png_by_imsnowbieber_d3jme6i-fullview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\deposito-aduanero.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\baseline_lock_open_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\1x\Recurso 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\frame__Ventana-Agregar-PC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\frame__Ventana-Informe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\frame__Ventana-Inicio-Sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\frame__Ventana-Menu-principal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vista\recursos\frame__Vetana-FAQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="modelo\EntityFramework\ModeloTucano.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloTucano.edmx</DependentUpon>
+      <LastGenOutput>ModeloTucano.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="modelo\EntityFramework\ModeloTucano.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloTucano.edmx</DependentUpon>
+      <LastGenOutput>ModeloTucano.cs</LastGenOutput>
+    </Content>
+    <None Include="vista\recursos\Frame__Vetana-Dashboard.png" />
+    <None Include="Resources\baseline_create_white_48dp1.png" />
+    <None Include="Resources\outline_clear_white_48dp.png" />
+    <None Include="Resources\baseline_create_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Adaptador\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

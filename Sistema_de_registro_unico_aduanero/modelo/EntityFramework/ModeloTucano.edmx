@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SampleEntityFrameworkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="computador">
+          <Key>
+            <PropertyRef Name="GUIDComputador" />
+          </Key>
+          <Property Name="GUIDComputador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Marca" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sistema_Operativo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Estado" Type="nchar" MaxLength="10" />
+          <Property Name="Peso" Type="float" />
+          <Property Name="Precio" Type="money" />
+          <Property Name="Color" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cantidad_perifericos" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="SampleEntityFrameworkModelStoreContainer">
+          <EntitySet Name="computador" EntityType="Self.computador" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SampleEntityFrameworkModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="computador">
+          <Key>
+            <PropertyRef Name="GUIDComputador" />
+          </Key>
+          <Property Name="GUIDComputador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sistema_Operativo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Estado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Peso" Type="Double" />
+          <Property Name="Precio" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cantidad_perifericos" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="SampleEntityFramework" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="computador" EntityType="Self.computador" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SampleEntityFrameworkModelStoreContainer" CdmEntityContainer="SampleEntityFramework">
+          <EntitySetMapping Name="computador">
+            <EntityTypeMapping TypeName="SampleEntityFrameworkModel.computador">
+              <MappingFragment StoreEntitySet="computador">
+                <ScalarProperty Name="GUIDComputador" ColumnName="GUIDComputador" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Sistema_Operativo" ColumnName="Sistema_Operativo" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Cantidad_perifericos" ColumnName="Cantidad_perifericos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

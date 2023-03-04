@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SampleEntityFrameworkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="computador">
+    <Key>
+      <PropertyRef Name="GUIDComputador" />
+    </Key>
+    <Property Name="GUIDComputador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Marca" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sistema_Operativo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Estado" Type="nchar" MaxLength="10" />
+    <Property Name="Peso" Type="float" />
+    <Property Name="Precio" Type="money" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cantidad_perifericos" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="SampleEntityFrameworkModelStoreContainer">
+    <EntitySet Name="computador" EntityType="Self.computador" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
